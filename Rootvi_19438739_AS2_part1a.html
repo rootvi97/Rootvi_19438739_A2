@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Rootvi Pandya</title>
+
+    <!-- Link to bootstraps style sheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   
+    <!-- Linking my page to  style sheet -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Link to google fonts to get "roboto" and "rubik" -->
+    <!-- Link to font awesome for icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik&display=swap" rel="stylesheet"><script src="https://kit.fontawesome.com/c7e9f35162.js" crossorigin="anonymous"></script>
+</head>
+<header>
+
+    <!-- Bootstrap navbar  -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="navbar">
+        <!-- Importing svg logo at the start of navbar -->
+        <button id="navbar-toggler" class="navbar-toggler">
+        
+        <!-- 3 bars which constitute menu button -->
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        </button>
+       
+        <!-- Bootstrap  menu button -->
+        <!-- Collapse section of the navbar containing links -->
+        <div class="navbar-collapse" id="navbarItems">
+        <ul class="navbar-nav mr-auto">
+            
+            <!-- Each link is in  list and each of them perform javascript function which reference nothing -->
+            <li class="nav-item">
+            <a id="homeLink" class="nav-link" href="javascript:void(0)" onclick="homeScroll();">Home</a>
+            </li>
+            <li class="nav-item">
+            <a id="portfolioLink" class="nav-link" href="javascript:void(0)" onclick="portfolioScroll();">Portfolio</a>
+            </li>
+            <li class="nav-item">
+            <a id="cvLink" class="nav-link" href="javascript:void(0)" onclick="cvScroll();">About</a>
+            </li>
+            <li class="nav-item">
+            <a id="contactLink" class="nav-link" href="javascript:void(0)" onclick="contactScroll();">Contact</a>
+            </li>
+           
+            <!-- Referring to display toggle -->
+            <li id="themeControls">
+            
+            <!-- Day icon -->
+            <i class="far fa-sun" id="sun"></i>
+            
+            <!-- Switch itself -->
+            <label class="switch">
+                
+                <!-- Switch is made of a check box, checked = dark theme -->
+                <input type="checkbox" id="theme-toggler">
+                
+                <!-- Slider is used to maintian theme selection -->
+                <span class="slider round"></span>
+            </label>
+        </ul>
+   
+        <!-- Title on the right of the navbar before collapse -->
+        <span class="navbar-text" id="navbar-title">
+           Rootvi Pandya
+        </span>
+        </div>
+    </nav>
+</header>
+<body>
+
+<!-- Body is split into pages -->
+<!-- Landing page section -->
+<section id="home">
+    
+    <!-- Background image for landing page -->
+    <div id="homeContainer">
+    
+    <!-- First title of the site -->
+    <h1>Hello, My name is Rootvi</h1>
+    
+    <!-- Brief introduction -->
+    <p> Software Engineering student <br>
+        studying at University of Northampton.</p>
+    </div>
+</section>
+
+<!-- Portfolio section -->
+<section id="portfolio">
+    
+    <!-- Title -->
+    <h1>Portfolio</h1>
+    
+    <!-- Gallery, which will be filled onload by main.js -->
+    <div id="gallery">
+    </div>
+</section>
+
+<!-- Resume section -->
+<section id="cv">
+    <div id="cvContainer">
+    
+    <!-- Main title -->
+    <h1>Experience</h1>
+    
+    <!-- Sub-title -->
+    <h2>Programming</h2>
+    
+    <!-- Below two paragraphs are the main body of cv text -->
+    <p>
+        I began computing when I was in GCSE, during this I learned new technologies and systems.
+        Since then, I decided to join this field of study and I started developing and learning programming skills.
+        I am always keen to learn new programming languages whether it be in web development or software.
+    </p>
+    <p>
+        More recently I have begun to program User Interfaces for applications.
+       
+        <!-- Linking my projects to JavaScipt -->
+        Other recent projects can be seen <a href="javascript:void(0)" onclick="portfolioScroll();">here</a>.
+        
+        <!-- Linking to portfolio again -->
+        I also created this website!
+    </p>
+    
+    <!-- Using grid structure for rest of my portfolio -->
+    <div class="row">
+        
+        <!-- Bootstrap grid -->
+        <div class= "col-lg-6">
+        
+        <!-- Another sub-title -->
+        <h2>Education</h2>
+        <ul> 
+            
+            <!-- Below lists come under the "University" sub-title -->
+            <li>BSc Software Engineering</li>
+            <li>University of Northampton</li>
+        </ul>
+        </div>
+        <div class="col-lg-6">
+        <h2>Skills</h2>
+        
+        <!-- Displaying grid inside a grid this means,  right side comes under the left before splitting -->
+        <div class="row">
+            <div class="col-md-6">
+            <h3>Web Development</h3>
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Bootstrap</li>
+                </ul>
+                </div>
+                <div class="col-sm-6">
+                <h4>Software Engineering</h4>
+                <ul>
+                    <li>Java</li>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>C#</li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</section>
+
+<!-- Contact section -->
+<section id="contact">
+    <div class="formTitle">
+    
+    <!-- Main title of contact -->
+    <h1>Contact Me</h1>
+    <div id="tool">
+        
+        <!-- Button calls copy function, which places my email into the clipboard -->
+        <button id="mail" onclick="copyText();">pandyarootvi@gmail.com</button>
+        
+        <!-- Span is a tool tip text to appear above the button -->
+        <span id="tip"><span id="tiptext">Copy E-mail</span></span>
+    </div>
+
+    </div>
+    
+    <!-- Boostrap form -->
+    <form>
+    <div class="form-row">
+        
+        <!-- Name field -->
+        <div class="form-group col-md-6">
+        <label for="inputName">Name</label> 
+        <input type="text" class="form-control" id="inputName">
+        </div>
+        
+        <!-- Employer's name field -->
+        <div class="form-group col-md-6">
+        <label for="inputEmployer">Employers name</label> 
+        <input type="text" class="form-control" id="inputEmployer">
+        </div>
+    </div>
+    <div class="form-row">
+        
+        <!-- E-mail field with a placeholder -->
+        <div class="form-group col-md-6">
+        <label for="inputEmail">E-mail</label> 
+        <input type="email" class="form-control" id="inputEmail" placeholder="example@email.com">
+        </div>
+        
+        <!-- Location field with a place holder -->
+        <div class="form-group col-md-6">
+        <label for="inputLocation">Location</label> 
+        <input type="text" class="form-control" id="inputLocation" placeholder="City, Country">
+        </div>
+    </div>
+    
+    <!-- Job description field, which is a larger textarea -->
+    <div class="form-group">
+        <label for="inputDescription">Message</label>
+        <textarea id="inputDescription" rows="3" class="form-control"></textarea>
+    </div>
+    <button id="submitButton" type="submit" class="btn btn-primary btn-dark">Submit</button>
+    </form>
+</section>
+</body>
+
+<!-- Boostrap footer -->
+<footer class="page-footer text-light bg-dark"> 
+<div class="row" id="footer">
+    <div class="col-lg-9 col-md-8 col-xs-6">
+    <div class="row">
+        <div class="col-md-6">
+        
+        <!-- Short list of footer contents -->
+        <ul> 
+            <li>
+            <p>Made by Rootvi Pandya<i class="far fa-copyright"></i>2020</p>
+            </li>
+            <li>
+            <p>University of Northampton</p>
+            </li>
+        </ul>
+        </div>
+        
+        <!-- Social links -->
+        <div class="col-md-6">
+        <ul id="links">
+            <li>
+            <a href="https://github.com/rootvi97"><i class="fab fa-github"></i></a>
+            </li>
+            <li>
+            <a href="https://www.instagram.com/rjp_978211/"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+            <a href="https://codepen.io/r281197"><i class="fab fa-codepen"></i></a>
+            </li>
+            <li><a href="https://discord.com/channels/@me"><i class="fab fa-discord"></i></a></li>
+        </ul>
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-6" id="top-button-container">
+    
+    <!-- Button in the footer which scrolls to top of the page -->
+    <button class="btn" id="top-button"> 
+        <i class="fas fa-arrow-up"></i>
+        Back to top
+    </button>
+    </div>
+</div>
+</footer>
+
+<!-- Linking my javascript source, main.js -->
+<script src="main.js"></script> 
+</html>

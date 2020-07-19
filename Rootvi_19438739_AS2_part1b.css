@@ -1,0 +1,542 @@
+/* Root defines variables of font and colour to be used which allows to change colours easily */
+:root{
+    --fullBackground: #ffffff;
+    --backingOne: #c5cae9;
+    --backingTwo: #303f9f;
+    --textOne: #ffffff;
+    --textTwo: #212121;
+    --accent: #7c4dff;
+    --bodyFont: 'Roboto';
+    --headFont: 'Rubik';
+}
+
+/* Animates the scroll between sections while using the navigation */
+html {scroll-behavior: smooth;} 
+
+/* Colours the background of  body, so that it can be changed and animates this change */
+body {background-color: var(--fullBackground); transition: all .2s ease;} 
+
+/* Navigation styling */
+nav {
+    font-family: var(--headFont), sans-serif;
+    text-transform: uppercase;
+}
+#navbar-title {margin-bottom: 8px; color: #ffffff;}
+#navbar {padding-bottom: 0;}
+
+/* Reduce the opacity of all navigation links (active will have increased opacity to look brighter */
+#homeLink, #contactLink, #cvLink, #portfolioLink{opacity: 0.6; color: #ffffff; padding-bottom: 14px; transition: all .2s ease;} 
+
+/* All links will become accented on hover */
+.nav-item:hover{box-shadow: 0px -5px 0px var(--accent) inset;} 
+
+/* Styling navbar collapse button */
+#navbar-toggler{
+    border: none;
+    font-size: 1.5rem;
+    transition: .5s ease;
+    margin-top: 0px;
+    padding-top: 0;
+    margin-bottom: 6px;
+}
+#navbar-toggler:focus{outline: none;}
+#navbar-toggler:hover{box-shadow: 1px 1px var(--accent), 2px 2px var(--accent), 3px 3px var(--accent);}
+
+/* The code for the hover effect is taken from https://www.csswand.dev/ */
+#navbar-toggler:hover .bar1, #navbar-toggler:hover .bar2, #navbar-toggler:hover .bar3{background-color: #ffffff;}
+
+/* Referring to the bars that make up buttons above */
+.bar1, .bar2, .bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: #aaaaaa;
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 5px;
+} 
+ 
+/* Animate the first bar when the collapse is open */
+.active .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-7px, 6px);
+    transform: rotate(-45deg) translate(-7px, 6px);
+} 
+
+/* Animate the second bar when the collapse is open */
+.active .bar2 {opacity: 0;} 
+  
+/* Animate the third bar when the collapse is open */
+/* These bars go from forming a hamburger to an X to signify "close" */
+/* The css code for bars animation is taken from https://www.w3schools.com/howto/howto_css_menu_icon.asp */
+.active .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px); 
+}
+
+/* Navbar-toggler refers to the "hamburger" only visible when at small viewport widths,
+ change some of the bootstrap items */
+/* The hover effect code is taken from https://www.csswand.dev/ */
+#navbarItems {transition: all 0.5s ease; padding-bottom: 0;}
+/* Navigation style ends */
+
+/* This styles day-night switch */
+/* The css surrounding the switch and slider is taken from https://www.w3schools.com/howto/howto_css_switch.asp */
+.switch { 
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin: 4px;    
+    margin-top: 8px;
+} 
+
+/* Hiding original  input checkbox and overwriting it by switch */
+.switch input {
+    opacity: 0; 
+    width: 0;
+    height: 0;
+}
+
+/* Positioning and colouring slider of the switch */
+.slider {
+    position: absolute; 
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #eeeeee;
+    transition: .5s;
+}
+
+/* Positioning and styling slider */
+.slider:before {
+    position: absolute; 
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #343840;
+    transition: .5s;
+}
+
+/* Changing  colour of the slider background when "on" */
+input:checked + .slider {
+    background-color: #212121; 
+}
+
+/* Moving the slider handle to the right to turn on */
+input:checked + .slider:before {
+  transform: translateX(26px); 
+}
+
+/* Making the slider edges rounded */
+.slider.round {
+  border-radius: 34px; 
+} 
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Moving the slider away from list */
+#navbarItems li:last-child {margin-left: 1rem;} 
+
+/* Styling icons next to the slider */
+#themeControls i {margin-top: 5px; color: #ffeb3b; transition: all .4s ease; opacity: 0;} 
+
+/* Changing slider's background on hover */
+/* This code is taken from https://www.csswand.dev/ */
+.slider:hover{box-shadow: 1px 1px var(--accent), 2px 2px var(--accent), 3px 3px var(--accent);}
+/* Slider style ends */
+
+/* Styling footer */
+#footer {
+    margin: 1rem;
+    margin-bottom: 0;
+    font-family: var(--bodyFont), sans-serif;
+}
+#footer ul {
+    margin-top: 1rem;
+    list-style-type: none;
+}
+#footer li {margin: 0;}
+#footer i{margin: 5px;}
+#footer #links{float: right; margin-top: 2rem;}
+#footer #links li a{color: #ffffff; font-size: 28px; border-radius: 5px; margin-left: .2rem; transition: all .2s ease;}
+#footer #links li{display: inline;}
+#footer #links li a:hover{color: var(--accent);}
+
+/* Styling  "back to top" button */
+#footer button {margin: 2rem; width: 10rem; border: solid 1px #ffffff; color: #ffffff;}
+
+/* Removing bootstrap's box shadow which exists on focus */
+#footer button:focus{box-shadow: none;}
+
+/* The code for hover is taken from  https://www.csswand.dev/ */
+#footer button:hover{box-shadow: 1px 1px var(--accent), 2px 2px var(--accent), 3px 3px var(--accent);}
+
+/* Making sure that no button parts are cut off by grid */
+#top-button-container{overflow-x: visible;}
+/* Footer style ends */
+
+/* Styling all of the h1 headings  in the body to be uppercase and font colour to be changed */
+body h1 {
+    text-transform: uppercase; 
+    text-align: center; 
+    color: var(--textTwo);
+    margin-bottom: 1rem;
+    font-family: var(--headFont), sans-serif;
+}
+
+/* Styling landing page section */
+#home {
+    background-color: #303f9f;
+    margin: 1rem;
+    margin-top: 5rem;
+
+    /* Makes the height to always be screenheight - height of navbar - margins */
+    height: calc(100vh - 6rem); 
+    text-align: center;
+    font-family: var(--bodyFont), sans-serif;
+}
+
+/* Style the home box */
+#homeContainer h1 {
+    font-size: 5rem;
+    text-transform: none;
+
+    /* Making the text always sit in the middle of  home section */
+    transform: translateY(calc((((100vh - 6rem) * .5) - 5rem))); 
+    color: #ffffff;
+    filter:drop-shadow(5px 5px var(--accent));
+}
+
+#homeContainer p {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-size: 2rem;
+    transform: translateY(calc((((100vh - 6rem) * .5) - 5rem))); 
+    color: #ffffff;
+    filter:drop-shadow(3px 3px var(--accent));
+}
+
+/* Putting  background image into  home section to fill the container */
+#homeContainer {height: 100%; background-image: url(https://source.unsplash.com/2100x900/?motherboard,light); background-position: center; background-size: cover;}
+/* Landing page style ends */
+
+/* Styling portfolio section */
+#portfolio {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    font-family: var(--bodyFont), sans-serif;
+}
+
+#gallery .row {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+/* Extra styling that goes with bootstraps fluid images */
+.img-fluid {
+    border-radius: 5px;
+    transition: .2s ease;
+    
+} 
+
+.col {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* Styling the text which appears on gallery images when hovering */
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+/* Changing image to grey when hovering */
+.col:hover .img-fluid {
+    filter: grayscale(1);
+    filter: brightness(0.2);
+} 
+
+.col:hover .middle {opacity: 1;}
+
+#gallery button {
+    border: none;
+    background: none;
+}
+
+#gallery button:focus{outline: none;}
+
+/* This is a pointer to show which image is being referred  by the description box below and
+.triangle-up style is taken from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_shapes_triangle-up */
+.triangle-up {
+    margin-top: 5px;
+	width: 0;
+	height: 0;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+    border-bottom: 15px solid var(--backingOne);
+    margin-bottom: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    margin-left: 4rem;
+    transition: all .2s ease; 
+} 
+ 
+/* Styling box which houses portfolio image descriptions */
+.descBox {
+    overflow-x: visible;
+    background-color: var(--backingOne);
+    color: var(--textTwo);
+    font-family: var(--bodyFont), sans-serif;
+} 
+
+/* Styling text container within the box */
+.descText {
+    margin-left: 11%;
+    transition: all 0.2s ease;
+    overflow-y: hidden;
+    max-height: 0;
+} 
+
+/* Styling text */
+.descText p{font-size: 20px;} 
+.descBox h2 {
+    font-family: var(--headFont), sans-serif;
+    padding-top: 1rem;
+}
+
+#gallery .icon {text-align: right;}
+
+#gallery .icon a{
+    font-size: 28px;
+    color: var(--textTwo);
+    transition: all .2s ease;
+    margin-right: 11%;
+}
+
+/* Icon refers to the github icon at the end of some descriptions which links to their github page */
+#gallery .icon a:hover {color: var(--accent);}
+/*Portfolio style ends */
+
+/* Styling cv section */
+#cv {
+    color: var(--textTwo);
+
+    /* Filling background colour to distinguish from adjacent sections */
+    background-color: var(--backingOne);
+} 
+
+#cvContainer {
+    margin: 5rem;
+    border-top: 2rem solid var(--backingOne);
+    border-bottom: 2rem solid var(--backingOne);
+}
+
+#cv h2 {
+    font-size: 22px;
+    margin-top: 0.5rem;
+}
+
+#cv h3 {
+    font-size: 20px;
+}
+
+#cv h4 {
+    font-size: 18px;
+}
+
+#cv ul{
+    list-style-type: none;
+    margin-left: -2rem;
+}
+
+#cv a {
+    text-decoration: underline;
+    color: var(--textTwo);
+    transition: all 0.2s ease;
+} 
+#cv a:hover{
+    color: var(--accent);
+}
+/* CV style ends and most work is done by boostrap */
+ 
+/* Styling contact section */
+#contact {
+    margin: 5rem;
+}
+
+#contact h1{
+    margin-bottom: 0;
+}
+
+#contact .formTitle {
+    text-align: center;
+}
+
+#mail {
+    text-decoration: underline;
+    color: var(--textTwo);
+    transition: all 0.2s ease;
+    background-color: transparent;
+    border: none;
+} 
+#mail:hover{
+    color: var(--accent);
+}
+#mail:focus {
+    outline: none;
+}
+
+/* This css related to tool and code is taken from  https://www.w3schools.com/howto/howto_css_tooltip.asp */
+#tool { 
+    position: relative;
+    display: inline-block;
+  }
+  
+  #tool #tip {
+    width: 120px;
+    background-color: var(--backingOne);
+    color: var(--textTwo);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -20%;
+    left: 140%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: all .2s ease;
+  }
+  
+  #tool #tip::after {
+    content: "";
+    position: absolute;
+    top: 38%;
+    left: -6%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent var(--backingOne) transparent transparent;
+    transform: scale(1.4);
+  }
+  
+  #tool:hover #tip{
+    opacity: 1;
+  }
+
+
+
+#contact form {
+    margin-top: 1.5rem;
+}
+
+#contact form label {
+    color: var(--textTwo);
+}
+
+.form-control {
+    transition: all 0.2s ease;
+    background-color: var(--backingOne);
+    color: var(--textTwo);
+    border: none;
+}
+
+/* The code for the hover effect is taken from https://www.csswand.dev/ */
+.form-control:focus{
+    background-color: var(--backingOne);
+    color: var(--textTwo);
+    box-shadow: 1px 1px var(--accent), 2px 2px var(--accent), 3px 3px var(--accent);
+}
+
+/* Form control refers to bootstrap form fields */
+.form-control::placeholder {
+    color: var(--textTwo);
+    opacity: .8;
+} 
+
+#submitButton {
+    border: solid 1px var(--textTwo);
+    background-color: var(--fullBackground);
+    color: var(--textTwo);
+}
+
+/* The code for the hover effect is taken from https://www.csswand.dev/ */
+#submitButton:hover {box-shadow: 1px 1px var(--accent), 2px 2px var(--accent), 3px 3px var(--accent);}
+/* Contact style ends */
+
+/* Media queries : bootstaps css also includes some that occur at the same widths as these */
+@media (max-width: 1044px) {
+    .descText {
+        margin-left: 20%;
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width: 992px) {
+    #navbarItems {
+        text-align: right;
+        max-height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+    #navbar-title {display: none;}
+    #navbarItems ul {float: right;}
+    #navbarItems li {margin-right: 1.4rem; width: 8rem;}
+    #navbarItems li:last-child {margin-right: 0; padding-bottom: 1rem;}
+    #footer button{margin-right: 1rem;}
+    .descText{margin-left: 8%;}
+}
+
+@media (max-width: 767.98px){
+    #footer button{margin-top: .5rem;}
+    #footer #links {float: left; margin-top: 0;}
+}
+
+@media (max-width: 575.98px) {
+    #cvContainer, #contact {
+        margin: 2rem;
+    }
+    #footer {
+        margin-left: 5px;
+    }
+    .descText{margin-left: 5%;}
+    #gallery img{margin-top: 0;}
+}
+
+@media (max-width: 400px) {
+    .descText h2 {
+        font-size: 20px;
+    }
+    .descText p{
+        font-size: 16px;
+    }
+}
+/* Media queries ends */
+
+/* Styling Scrollbar */
+/* Making the scrollbar track same colour as the site background and have a width of 5px */
+::-webkit-scrollbar {
+    background-color: var(--fullBackground);
+    width: 5px;
+} 
+
+/* Making track piece or thumb have a colour contrasting the thumb colour */
+::-webkit-scrollbar-thumb {
+    background-color: var(--backingTwo);
+}
+
+/* Setting thumb to have a hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent);
+}
